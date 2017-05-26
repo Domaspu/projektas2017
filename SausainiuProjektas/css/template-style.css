@@ -15,6 +15,14 @@ a.white-btn {
 a.white-btn:hover {
 	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.1);
 }
+.line li{ /* Login ir SignUp vienoje linijoje*/	
+	display: inline;
+}
+.line li a:hover { /* Login ir SignUp pasikeicia zaliai uzvedus*/	
+	background: none repeat scroll 0 0 #00283a;	
+	color: #92c500;
+	position: relative;
+}	
 a.color-btn, form.customform button.color-btn {
 	background: none;
 	border: 1px solid #001925;
