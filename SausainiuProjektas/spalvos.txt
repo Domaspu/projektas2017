@@ -1,0 +1,4 @@
+#472c04 tamsiai ruda
+#f3c973 sviesiai ruda
+#33240e tamsiausia ruda
+#704f1e banerio mygtuku spalva
