@@ -70,15 +70,19 @@ include "config.php";
 					if($result->num_rows > 0){
 						while ($row = $result->fetch_assoc()) { ?>
 		
-							<table><p> <?php echo "Vartotojo ID: ". $row['mem_id']." ."; ?> <?php echo "Vardas: ". $row['username']." ."; ?> <?php echo "Teisės: ". $row['rights']."."; ?> </p>			
-							<form method="Post" action="changeSQL.php">
+							<table> <?php echo "Vartotojo ID: ". $row['mem_id']." ."; ?> <?php echo "Vardas: ". $row['username']." ."; ?> <?php echo "Teisės: ". $row['rights']."."; ?> </p>			
+							<p><form method="Post" action="changeSQL.php">
 							<input type="hidden" name="id" value=<?php echo $row['mem_id'];?>>
-							<input type="radio" name="rights" value="administratorius">administratorius<br>
-							<input type="radio" name="rights" value="rasytojas">rasytojas<br>
-							<input type="radio" name="rights" value="skaitytojas">skaitytojas<br><br>
-							<input type="Submit" value="Pakeisti teises"></table>	
-							</form>	
-								
+							<input type="radio" name="rights" value="administratorius">administratorius<br>							
+							<input type="radio" name="rights" value="vartotojas">vartotojas<br><br>
+							<input type="Submit" value="Pakeisti teises">							
+							</form>	</p></br>	
+							
+							<p> <form method="Post" action="deleteUser.php">
+							<input type="hidden" name="id" value=<?php echo $row['mem_id'];?>>
+							<input type="submit" value="Ištrinti vartotoją">
+							</form></p></table></br>	
+							
 								<?php }	
 					}else {
 						echo "<p>Irasu nera</p>"; } ?>
@@ -92,16 +96,19 @@ include "config.php";
 					if($result->num_rows > 0){
 						while ($row = $result->fetch_assoc()) { ?>
 		
-							<table><p> <?php echo "Vardas: ". $row['username']." "; ?></br>
+							<table><p><?php echo "". $row['id'].". "; ?><?php echo "Vardas: ". $row['username']." "; ?></br>
 							<?php echo "El. paštas: ". $row['userEmail']." "; ?></br>
 							<?php echo "Tekstas: ". $row['text']." "; ?></br>
 							<?php echo "Data: ". $row['date']." "; ?><?php echo " ". $row['time']." ."; ?></p></table>		
-							
+							<p> <form method="Post" action="deleteMail.php">
+							<input type="hidden" name="id" value=<?php echo $row['id'];?>>
+							<input type="submit" value="Ištrinti laišką">
+							</form></p></table></br>
 							
 								
 								<?php }	
 					}else {
-						echo "<p>Irasu nera</p>"; } ?>
+						echo "<p>Irasu nera</p>"; } ?><br>
 						
 						
 						

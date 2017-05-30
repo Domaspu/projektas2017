@@ -189,11 +189,11 @@ include "config.php";
                <div class="margin">
 
 					<div class="w3-content w3-display-container">
-					  <img class="mySlides" src="img/img2.jpg" style="width:100%">
-					  <img class="mySlides" src="img/img3.jpg" style="width:100%">
-					  <img class="mySlides" src="img/img4.jpg" style="width:100%">
-					  <img class="mySlides" src="img/img5.jpg" style="width:100%">
-					  <img class="mySlides" src="img/img6.jpg" style="width:100%">
+					  <img class="mySlides" src="img/mummy.jpg" style="width:100%">
+					  <img class="mySlides" src="img/scary.jpg" style="width:100%">
+					  <img class="mySlides" src="img/sexy.jpg" style="width:100%">
+					  <img class="mySlides" src="img/mario.jpg" style="width:100%">
+					  <img class="mySlides" src="img/funny_cookies2.jpg" style="width:100%">
 
 					  <button class="w3-button w3-brown w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
 					  <button class="w3-button w3-brown w3-display-right" onclick="plusDivs(1)">&#10095;</button>
