@@ -58,7 +58,7 @@ $error = null;
          <div id="contact">
             <div class="line">
                <h2 class="section-title">Prisijungti</h2>
-		
+			   <p class="actions" color="red" style="color:red;">Blogas prisijungimo vardas arba slaptažodis</p>
                <div class="margin">
                   <div class="s-12 m-12 l-3 hide-m hide-s margin-bottom right-align">                    
                   </div>                  
