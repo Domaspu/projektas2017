@@ -65,7 +65,7 @@ $error = null;
                   <div class="s-12 m-12 l-5">                    
                     <form class="customform" method="post" action="Login-php.php">
                       <div class="s-12"><input name="username" placeholder="Vartotojo vardas" title="username" type="text" /></div>
-                      <div class="s-12"><input name="password" placeholder="Vartotojo slaptažodis" title="password" type="text" /></div>                      
+                      <div class="s-12"><input name="password" placeholder="Vartotojo slaptažodis" title="password" type="password" /></div>                      
                       <div class="s-12 m-12 l-4"><button class="color-btn" name="submit" type="submit">Prisijungti</button></div>
                     </form>
                   </div>
