@@ -37,12 +37,12 @@
                <div class="top-nav s-12 l-10">
                   <p class="nav-text"></p>
                   <ul class="right">
-                     <li><a href="index.html#carousel">Pagrindinis</a></li>
-                     <li><a href="index.html#features">Mes siūlome</a></li>
-                     <li><a href="index.html#about-us">Apie mus</a></li>
-                     <li><a href="index.html#our-work">Mūsų darbai</a></li>
-                     <li><a href="index.html#services">Paslaugos</a></li>
-                     <li><a href="index.html#contact">Kontaktai</a></li>
+                     <li><a href="index.php#carousel">Pagrindinis</a></li>
+                     <li><a href="index.php#features">Mes siūlome</a></li>
+                     <li><a href="index.php#about-us">Apie mus</a></li>
+                     <li><a href="index.php#our-work">Mūsų darbai</a></li>
+                     <li><a href="index.php#services">Paslaugos</a></li>
+                     <li><a href="index.php#contact">Kontaktai</a></li>
                   </ul>
                </div>
             </div>
@@ -58,11 +58,11 @@
                   <div class="s-12 m-12 l-3 hide-m hide-s margin-bottom right-align">                    
                   </div>                  
                   <div class="s-12 m-12 l-5">                    
-                    <form class="customform" action="">
-					  <div class="s-12"><input name="" placeholder="El. paštas" title="userEmail" type="text" /></div>
-                      <div class="s-12"><input name="" placeholder="Vartotojo vardas" title="username" type="text" /></div>
-                      <div class="s-12"><input name="" placeholder="Vartotojo slaptažodis" title="pssword" type="text" /></div>                      
-                      <div class="s-12 m-12 l-4"><button class="color-btn" type="submit">Registruotis</button></div>
+                    <form class="customform" method="post" action="db.php">
+					  <div class="s-12"><input name="userEmail" placeholder="El. paštas" type="text" /></div>
+                      <div class="s-12"><input name="username" placeholder="Vartotojo vardas" type="text" /></div>
+                      <div class="s-12"><input name="password" placeholder="Vartotojo slaptažodis" type="password" /></div>                      
+                      <div class="s-12 m-12 l-4"><button class="color-btn" name="submit" "type="submit">Registruotis</button></div>
                     </form>
                   </div>
                </div>

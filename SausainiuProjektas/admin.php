@@ -1,20 +1,26 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 session_start();
-$error = null;
+include "config.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Sausainiai Design</title>
       <link rel="stylesheet" href="css/components.css">
       <link rel="stylesheet" href="css/responsee.css">
+	  <link rel="stylesheet" href="css/images.css">
       <link rel="stylesheet" href="css/icons.css">
       <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
       <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+	   
       <!-- CUSTOM STYLE -->
       <link rel="stylesheet" href="css/template-style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
       <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
       <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -26,8 +32,8 @@ $error = null;
          <div id="topbar">
             <div class="line">
                <div class="s-12 m-6 l-6">
-                  <ul class="left">				  
-				   <li><a href="SignUp.php">Registruotis</a></li>
+                  <ul class="left">
+				   <li><a href="logout.php">Atsijungti</a></li>
 				   </ul>
                </div>
                </div>
@@ -41,61 +47,71 @@ $error = null;
                <div class="top-nav s-12 l-10">
                   <p class="nav-text"></p>
                   <ul class="right">
-                     <li><a href="index.php#carousel">Pagrindinis</a></li>
-                     <li><a href="index.php#features">Mes siūlome</a></li>
-                     <li><a href="index.php#about-us">Apie mus</a></li>
-                     <li><a href="index.php#our-work">Mūsų darbai</a></li>
-                     <li><a href="index.php#services">Paslaugos</a></li>
-                     <li><a href="index.php#contact">Kontaktai</a></li>
+                     <li class="active-item"><a href="#carousel">Pagrindinis</a></li>
+                     <li><a href="index2.php#features">Mes siūlome</a></li>
+                     <li><a href="index2.php#about-us">Apie mus</a></li>
+                     <li><a href="index2.php#our-work">Mūsų darbai</a></li>
+                     <li><a href="index2.php#services">Paslaugos</a></li>
+                     <li><a href="index2.php#contact">Kontaktai</a></li>
                   </ul>
                </div>
             </div>
          </nav>
       </header>
-	  <br>
-      <section>         
-         <!-- CONTACT -->
-         <div id="contact">
-            <div class="line">
-               <h2 class="section-title">Prisijungti</h2>
+      <section>
+         <div id="admin">
+		 
+		 <h2 class="section-title">Vartotojų teisės</h2>
+         <!-- CAROUSEL -->
+        	<?php
+					include "config.php";
+					$sql = "SELECT * FROM member";
+					$result = $conn->query($sql);
+					if($result->num_rows > 0){
+						while ($row = $result->fetch_assoc()) { ?>
 		
-               <div class="margin">
-                  <div class="s-12 m-12 l-3 hide-m hide-s margin-bottom right-align">                    
-                  </div>                  
-                  <div class="s-12 m-12 l-5">                    
-                    <form class="customform" method="post" action="Login-php.php">
-                      <div class="s-12"><input name="username" placeholder="Vartotojo vardas" title="username" type="text" /></div>
-                      <div class="s-12"><input name="password" placeholder="Vartotojo slaptažodis" title="password" type="text" /></div>                      
-                      <div class="s-12 m-12 l-4"><button class="color-btn" name="submit" type="submit">Prisijungti</button></div>
-                    </form>
-                  </div>
-               </div>
-            </div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-        
+							<table><p> <?php echo "Vartotojo ID: ". $row['mem_id']." ."; ?> <?php echo "Vardas: ". $row['username']." ."; ?> <?php echo "Teisės: ". $row['rights']."."; ?> </p>			
+							<form method="Post" action="changeSQL.php">
+							<input type="hidden" name="id" value=<?php echo $row['mem_id'];?>>
+							<input type="radio" name="rights" value="administratorius">administratorius<br>
+							<input type="radio" name="rights" value="rasytojas">rasytojas<br>
+							<input type="radio" name="rights" value="skaitytojas">skaitytojas<br><br>
+							<input type="Submit" value="Pakeisti teises"></table>	
+							</form>	
+								
+								<?php }	
+					}else {
+						echo "<p>Irasu nera</p>"; } ?>
+						
+						
+						 <h2 class="section-title">Laiškai</h2>
+						<?php
+						include "configcomment.php";
+						$sql = "SELECT * FROM comments";
+					$result = $conn->query($sql);
+					if($result->num_rows > 0){
+						while ($row = $result->fetch_assoc()) { ?>
+		
+							<table><p> <?php echo "Vardas: ". $row['username']." "; ?></br>
+							<?php echo "El. paštas: ". $row['userEmail']." "; ?></br>
+							<?php echo "Tekstas: ". $row['text']." "; ?></br>
+							<?php echo "Data: ". $row['date']." "; ?><?php echo " ". $row['time']." ."; ?></p></table>		
+							
+							
+								
+								<?php }	
+					}else {
+						echo "<p>Irasu nera</p>"; } ?>
+						
+						
+						
+						
+						
+						
+						</div>
+						</section>
       </section>
-      <!-- FOOTER -->
-      <footer>
-         <div class="line">
-            <div class="s-12 l-6">
-               <p>Copyright 2017, Sausainiai Design</p>              
-            </div>
-            <div class="s-12 l-6">
-               <a class="right" href="http://www.sausainiaidesign.com" title="Responsee - lightweight responsive framework">Design and coding<br> by Sausainiai Team</a>
-            </div>
-         </div>
-      </footer>
+      
       <script type="text/javascript" src="js/responsee.js"></script>
       <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
       <script type="text/javascript">

@@ -1,3 +1,9 @@
+<?php
+header('Content-Type: text/html; charset=utf-8');
+session_start();
+include "config.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en-US">
    <head>
@@ -28,7 +34,7 @@
                <div class="s-12 m-6 l-6">
                   <ul class="left">
 				  <li><a href="Login.php">Prisijungti</a></li>
-				   <li><a href="SignUp.php">Registruotis</a></li>
+				  <li><a href="SignUp.php">Registruotis</a></li>
 				   </ul>
                </div>
                </div>
@@ -43,11 +49,11 @@
                   <p class="nav-text"></p>
                   <ul class="right">
                      <li class="active-item"><a href="#carousel">Pagrindinis</a></li>
-                     <li><a href="#features">Mes siūlome</a></li>
-                     <li><a href="#about-us">Apie mus</a></li>
-                     <li><a href="#our-work">Mūsų darbai</a></li>
-                     <li><a href="#services">Paslaugos</a></li>
-                     <li><a href="#contact">Kontaktai</a></li>
+                     <li><a href="index.php#features">Mes siūlome</a></li>
+                     <li><a href="index.php#about-us">Apie mus</a></li>
+                     <li><a href="index.php#our-work">Mūsų darbai</a></li>
+                     <li><a href="index.php#services">Paslaugos</a></li>
+                     <li><a href="index.php#contact">Kontaktai</a></li>
                   </ul>
                </div>
             </div>
@@ -250,7 +256,9 @@
          <div id="contact">
             <div class="line">
                <h2 class="section-title">Susisiekime</h2>
+			        
                <div class="margin">
+			   
                   <div class="s-12 m-12 l-3 hide-m hide-s margin-bottom right-align">
                     <img src="img/contact.jpg" alt="">
                   </div>
@@ -269,6 +277,8 @@
                   </div>
                   <div class="s-12 m-12 l-5">
                     <h3>Susisiekite su mumis</h3>
+					 <p class="actions" color="red" style="color:red;">Kad rašytumėte, turite prisijungti</p>              
+              
                     <form class="customform" action="">
                       <div class="s-12"><input name="" placeholder="Jūsų el. paštas" title="Your e-mail" type="text" /></div>
                       <div class="s-12"><input name="" placeholder="Jūsų vardas" title="Your name" type="text" /></div>

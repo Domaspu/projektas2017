@@ -41,6 +41,11 @@ a.color-btn:hover, form.customform button.color-btn:hover {
 	border: 1px solid #f3c973;
 	color: #f3c973;
 }
+#admin{
+	position: relative;
+	top: 100px;
+	left: 5%;	
+}
 #topbar {
 	background: none repeat scroll 0 0 #472c04;
 	border-bottom: 1px solid #472c04;
